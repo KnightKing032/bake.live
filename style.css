@@ -23,42 +23,18 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* Search Box */
-.search-box {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.search-input {
-  padding: 8px 12px;
-  border: none;
-  outline: none;
-  font-size: 0.95rem;
-}
-
-.search-btn {
-  padding: 8px 12px;
-  background: #e91e63;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s;
-}
-
-.search-btn:hover {
-  background: #c2185b;
-}
-
-/* -------- RESPONSIVE -------- */
-
-/* On small screens: show only icon */
+/* On small screens: show only icon initially */
 @media (max-width: 600px) {
   .search-input {
-    display: none; /* hide text box */
+    display: none; /* hidden until expanded */
+  }
+
+  .search-box.active .search-input {
+    display: block;       /* show when active */
+    background: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-right: 6px;
   }
 
   .search-box {
@@ -69,10 +45,12 @@ header {
   .search-btn {
     background: none;
     color: white;
-    font-size: 1.2rem;
-    padding: 0;
+    font-size: 1.4rem;
+    padding: 4px;
+    cursor: pointer;
   }
 }
+
 /* Hero Section Styling */
 .hero {
   height: 90vh;
