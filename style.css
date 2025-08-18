@@ -132,7 +132,7 @@ header {
   background: #f9f9f9;
 }
 /* Force 2 cards per row on mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .cake-section {
     grid-template-columns: repeat(2, 1fr);
   }
