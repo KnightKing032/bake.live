@@ -8,22 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function filterCakes() {
     const term = searchInput.value.toLowerCase().trim();
-    let anyVisible = false;
 
     cakes.forEach(card => {
       const title = card.querySelector(".cake-title").textContent.toLowerCase();
       const desc = card.querySelector(".cake-desc").textContent.toLowerCase();
       const match = title.includes(term) || desc.includes(term);
 
-      card.style.display = match ? "block" : "none";
-      if (match) anyVisible = true;
+      card.style.display = match ? "" : "none"; // ✅ fix: no more expansion
     });
 
     // 🎯 Hide hero if searching
     if (term.length > 0) {
       hero.style.display = "none";
     } else {
-      hero.style.display = "flex"; // reset when cleared
+      hero.style.display = ""; // ✅ reset to original CSS (instead of forcing flex)
     }
   }
 
