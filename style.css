@@ -126,12 +126,17 @@ header {
 }
 .cake-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /*Desktop*/
   gap: 20px;       /* space between cards */
   padding: 30px;
   background: #f9f9f9;
 }
-
+/* Force 2 cards per row on mobile */
+@media (max-width: 600px) {
+  .cake-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .cake-card {
   background: #fff;
   border-radius: 12px;
