@@ -114,4 +114,5 @@ header {
 
 .btn:hover {
   background: #e63956;
+  transform: scale(1.05);
 }
