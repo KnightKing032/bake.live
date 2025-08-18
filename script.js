@@ -1,4 +1,4 @@
-// Search + Hero Hide
+// Search + Hero Hide (with smooth fade)
 document.addEventListener("DOMContentLoaded", () => {
   const searchBox = document.querySelector(".search-box");
   const searchInput = document.querySelector(".search-input");
@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const desc = card.querySelector(".cake-desc").textContent.toLowerCase();
       const match = title.includes(term) || desc.includes(term);
 
-      card.style.display = match ? "" : "none"; // ✅ fix: no more expansion
+      card.style.display = match ? "" : "none"; // ✅ no expansion
     });
 
-    // 🎯 Hide hero if searching
+    // 🎯 Smoothly hide/show hero
     if (term.length > 0) {
-      hero.style.display = "none";
+      hero.classList.add("hidden");   // fade out
     } else {
-      hero.style.display = ""; // ✅ reset to original CSS (instead of forcing flex)
+      hero.classList.remove("hidden"); // fade back in
     }
   }
 
