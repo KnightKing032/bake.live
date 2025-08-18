@@ -1,1 +1,217 @@
-/* Reset */ * { margin: 0; padding: 0; box-sizing: border-box; } /* Header */ header { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: #f9c5d1; color: white; position: sticky; top: 0; z-index: 1000; } /* Logo */ .logo { font-size: 1.5rem; font-weight: bold; } /* 🔍 Search Box */ .search-box { display: flex; align-items: center; border: 2px solid #ccc; border-radius: 25px; padding: 5px 10px; background: #fff; transition: all 0.3s ease; } .search-input { border: none; outline: none; padding: 8px 10px; font-size: 14px; flex: 1; } .search-btn { background: #ff6f61; border: none; color: #fff; padding: 8px 12px; border-radius: 50%; cursor: pointer; transition: background 0.3s ease; } .search-btn:hover { background: #e85b50; } /* 📱 Mobile view */ @media (max-width: 600px) { .search-input { display: none; width: 100%; } .search-box.active .search-input { display: block; } } /* Hero Section Styling */ .hero { height: 90vh; background: url('your-hero-image.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; transition: opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease; overflow: hidden; } .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); /* overlay */ } .hero-content { position: relative; z-index: 1; max-width: 700px; padding: 20px; } .hero h1 { font-size: 3rem; margin-bottom: 15px; } .hero p { font-size: 1.2rem; margin-bottom: 25px; } .btn { background: #ff4d6d; color: white; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s ease; } .btn:hover { background: #e63956; transform: scale(1.05); } /* ✅ Hidden state: collapse + fade */ .hero.hidden { opacity: 0; max-height: 0; margin: 0; padding: 0; } .cake-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /*Desktop*/ gap: 20px; /* space between cards */ padding: 30px; background: #f9f9f9; } /* Force 2 cards per row on mobile */ @media only screen and (max-width: 768px) { .cake-section { grid-template-columns: 1fr 1fr !important; } } .cake-card { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; font-family: Arial, sans-serif; } .cake-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); } .cake-img { width: 100%; height: 200px; object-fit: cover; } .cake-info { padding: 15px; } .cake-title { font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .cake-desc { font-size: 0.85rem; color: #666; margin-bottom: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .cake-price { font-size: 1rem; font-weight: bold; color: #d32f2f; margin-bottom: 12px; } .add-btn { display: block; width: 100%; padding: 10px; background: #e91e63; color: white; font-size: 0.9rem; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s ease; } .add-btn:hover { background: #c2185b; }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #f9c5d1;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 🔍 Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-btn {
+  background: #ff6f61;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #e85b50;
+}
+
+/* 📱 Mobile view */
+@media (max-width: 600px) {
+  .search-input {
+    display: none;
+    width: 100%;
+  }
+
+  .search-box.active .search-input {
+    display: block;
+  }
+}
+
+/* Hero Section Styling */
+.hero {
+  height: 90vh;
+  background: url('your-hero-image.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  transition: opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #ff4d6d;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #e63956;
+  transform: scale(1.05);
+}
+
+/* ✅ Hidden state: collapse + fade */
+.hero.hidden {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.cake-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Desktop */
+  gap: 20px; /* space between cards */
+  padding: 30px;
+  background: #f9f9f9;
+}
+
+/* Force 2 cards per row on mobile */
+@media only screen and (max-width: 768px) {
+  .cake-section {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+.cake-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.cake-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cake-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cake-info {
+  padding: 15px;
+}
+
+.cake-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cake-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cake-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d32f2f;
+  margin-bottom: 12px;
+}
+
+.add-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #e91e63;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #c2185b;
+}
