@@ -39,6 +39,7 @@ header {
 
 .nav-links a:hover {
   color: #f39c12;
+  transform: scale(1.05);
 }
 
 /* Hamburger */
