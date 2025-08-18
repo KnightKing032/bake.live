@@ -6,11 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cakes = document.querySelectorAll(".cake-card");
   const hero = document.querySelector(".hero");
 
-  // ✅ Save each card's original display style
-  cakes.forEach(card => {
-    card.dataset.originalDisplay = getComputedStyle(card).display;
-  });
-
   function filterCakes() {
     const term = searchInput.value.toLowerCase().trim();
 
@@ -19,15 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const desc = card.querySelector(".cake-desc").textContent.toLowerCase();
       const match = title.includes(term) || desc.includes(term);
 
-      // ✅ Restore original style instead of forcing "flex"
-      card.style.display = match ? card.dataset.originalDisplay : "none";
+      // ✅ Toggle hide class
+      card.classList.toggle("hidden-card", !match);
     });
 
     // 🎯 Hide hero with collapse
     if (term.length > 0) {
-      hero.classList.add("hidden");
+      hero.classList.add("collapse");
     } else {
-      hero.classList.remove("hidden");
+      hero.classList.remove("collapse");
     }
   }
 
