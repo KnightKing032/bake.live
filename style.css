@@ -23,31 +23,48 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
 }
-/* On small screens: show only icon initially */
+/* 🔍 Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-btn {
+  background: #ff6f61;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #e85b50;
+}
+
+/* 📱 Mobile view */
 @media (max-width: 600px) {
   .search-input {
-    display: none; /* hidden until expanded */
+    display: none;
+    width: 100%;
   }
 
   .search-box.active .search-input {
-    display: block;       /* show when active */
-    background: white;
-    padding: 6px 10px;
-    border-radius: 6px;
-    margin-right: 6px;
-  }
-
-  .search-box {
-    background: none;
-    border-radius: 0;
-  }
-
-  .search-btn {
-    background: none;
-    color: white;
-    font-size: 1.4rem;
-    padding: 4px;
-    cursor: pointer;
+    display: block;
   }
 }
 
