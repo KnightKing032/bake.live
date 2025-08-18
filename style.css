@@ -78,6 +78,7 @@ header {
   text-align: center;
   color: white;
   position: relative;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* ✅ fade effect */
 }
 
 .hero::before {
@@ -116,9 +117,16 @@ header {
 }
 
 .btn:hover {
-  background: #e63956;
+  background: #e63956;
   transform: scale(1.05);
 }
+
+/* ✅ Hidden state (fade out) */
+.hero.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .cake-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /*Desktop*/
