@@ -49,3 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile: also filter live when typing after expanding
   searchInput.addEventListener("input", filterCakes);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // Auto-update copyright year
+  const footerBottom = document.querySelector(".footer-bottom");
+  const year = new Date().getFullYear();
+  footerBottom.innerHTML = `&copy; ${year} YourShop. All rights reserved.`;
+
+  // Optional: Add interactivity for social icons hover or collapse on mobile
+  const socialIcons = document.querySelectorAll(".social-icons a");
+  socialIcons.forEach(icon => {
+    icon.addEventListener("mouseenter", () => {
+      icon.style.transform = "scale(1.2)";
+      icon.style.transition = "transform 0.2s";
+    });
+    icon.addEventListener("mouseleave", () => {
+      icon.style.transform = "scale(1)";
+    });
+  });
+});
