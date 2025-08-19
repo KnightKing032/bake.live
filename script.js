@@ -77,3 +77,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedElements.forEach(el => observer.observe(el));
 });
+ const filterBtns = document.querySelectorAll(".filter-btn");
+const cakes = document.querySelectorAll(".cake-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // Remove active class from all buttons
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.getAttribute("data-filter");
+
+    cakes.forEach(cake => {
+      if (filter === "all" || cake.classList.contains(filter)) {
+        cake.style.display = "block";
+      } else {
+        cake.style.display = "none";
+      }
+    });
+  });
+});
