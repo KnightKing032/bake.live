@@ -1,117 +1,104 @@
-/* General styling */
+/* Reset some default styles */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fff8f8;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
   color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.container {
+/* Cake Details Container */
+.cake-details {
   max-width: 900px;
-  margin: 0 auto;
+  width: 95%;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
-}
-
-.cake-header {
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.cake-header h1 {
-  font-size: 2rem;
-  margin: 10px 0;
-}
-
-.cake-price {
-  font-size: 1.4rem;
-  color: #e63946;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.cake-image {
-  display: block;
+/* Cake Image */
+.cake-details img {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto 20px;
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cake-description {
-  font-size: 1rem;
-  line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.order-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #ff4d6d;
+/* Cake Title */
+.cake-details h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Price */
+.cake-details .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.cake-details p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Buy Button */
+.cake-details button {
+  background: #ff7b00;
   color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
   border-radius: 8px;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.order-btn:hover {
-  background: #e63950;
+.cake-details button:hover {
+  background: #e66900;
 }
 
-/* ===== Responsive Design ===== */
-
-/* For tablets and above */
+/* Responsive Layout */
 @media (min-width: 768px) {
-  .cake-layout {
+  .cake-details {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
+    text-align: left;
+    padding: 30px;
   }
 
-  .cake-image {
-    max-width: 350px;
-    flex-shrink: 0;
-  }
-
-  .cake-info {
+  .cake-details img {
     flex: 1;
+    max-width: 350px;
+    margin-bottom: 0;
   }
 
-  .cake-header h1 {
+  .cake-details h1 {
     font-size: 2.2rem;
   }
 
-  .cake-price {
+  .cake-details .price {
     font-size: 1.6rem;
   }
 
-  .cake-description {
+  .cake-details p {
     font-size: 1.1rem;
   }
-}
 
-/* For large desktops */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1100px;
-  }
-
-  .cake-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .cake-price {
-    font-size: 1.8rem;
-  }
-
-  .cake-description {
-    font-size: 1.2rem;
-  }
-
-  .order-btn {
-    font-size: 1.2rem;
-    padding: 14px 28px;
+  .cake-details button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
   }
 }
