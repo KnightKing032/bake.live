@@ -156,6 +156,29 @@ header {
   transform: scale(1);
 }
 
+.filter-tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #dcdcdc;
+}
+
+.filter-btn.active {
+  background: #ff6b6b;
+  color: white;
+}
 
 .cake-section {
   display: grid;
