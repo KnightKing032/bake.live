@@ -527,19 +527,31 @@
   const modalDesc = document.getElementById("modal-desc");
   const modalPrice = document.getElementById("modal-price");
   const closeBtn = document.querySelector(".close");
+  const buyBtn = document.getElementById("modal-buy");
 
   // When any cake-card is clicked
   document.querySelectorAll(".cake-card").forEach(card => {
     card.addEventListener("click", () => {
       const img = card.querySelector("img").src;
       const title = card.querySelector("h3").innerText;
-      const desc = card.querySelector("p").innerText; // use for description
-      const price = card.querySelector(".price")?.innerText || ""; // use .price class if available
+      const desc = card.querySelector("p").innerText;
+      const price = card.querySelector(".cake-price")?.innerText || "";
 
+      // Fill modal
       modalImg.src = img;
       modalTitle.innerText = title;
       modalDesc.innerText = desc;
       modalPrice.innerText = price;
+
+      // Save data to localStorage for details page
+      buyBtn.onclick = () => {
+        localStorage.setItem("cakeImage", img);
+        localStorage.setItem("cakeTitle", title);
+        localStorage.setItem("cakeDesc", desc);
+        localStorage.setItem("cakePrice", price);
+
+        window.location.href = "cake-details.html";
+      };
 
       modal.style.display = "flex";
     });
@@ -557,6 +569,7 @@
     }
   });
 </script>
+
 
    <!-- JS Scripts -->
   <script src="filter.js"></script>
