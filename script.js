@@ -46,16 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Mobile: also filter live when typing after expanding
-  searchInput.addEventListener("input", filterCakes);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  // Auto-update copyright year
+  // Footer auto year
   const footerBottom = document.querySelector(".footer-bottom");
   const year = new Date().getFullYear();
   footerBottom.innerHTML = `&copy; ${year} YourShop. All rights reserved.`;
 
-  // Optional: Add interactivity for social icons hover or collapse on mobile
+  // Social icon hover effects
   const socialIcons = document.querySelectorAll(".social-icons a");
   socialIcons.forEach(icon => {
     icon.addEventListener("mouseenter", () => {
@@ -66,18 +62,18 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.style.transform = "scale(1)";
     });
   });
+
+  // ✅ Scroll animations
+  const animatedElements = document.querySelectorAll('.fade-up, .zoom-in');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        obs.unobserve(entry.target); // animate once
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedElements.forEach(el => observer.observe(el));
 });
- // Select all animated elements
-const animatedElements = document.querySelectorAll('.fade-up, .zoom-in');
-
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show'); // Add animation class
-      obs.unobserve(entry.target); // Animate once (remove this line if you want repeat on scroll)
-    }
-  });
-}, { threshold: 0.2 }); // 0.2 = triggers when 20% is visible
-
-// Apply observer
-animatedElements.forEach(el => observer.observe(el));
