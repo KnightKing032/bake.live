@@ -107,3 +107,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Modal elements
+const modal = document.getElementById('cake-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalPrice = document.getElementById('modal-price');
+const modalBuy = document.getElementById('modal-buy');
+const closeBtn = document.querySelector('.modal .close');
+
+// Select all cake cards
+const cakeCards = document.querySelectorAll('.cake-card');
+
+cakeCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const imgSrc = card.querySelector('.cake-img').src;
+    const title = card.querySelector('.cake-title').textContent;
+    const desc = card.querySelector('.cake-desc').textContent;
+    const price = card.querySelector('.cake-price').textContent;
+
+    // Fill modal with cake data
+    modalImg.src = imgSrc;
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalPrice.textContent = price;
+
+    // Optional: WhatsApp order link
+    modalBuy.href = `https://wa.me/919876543210?text=Hi, I want to order the ${title}`;
+
+    // Show modal
+    modal.style.display = 'block';
+  });
+});
+
+// Close modal on X button
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close modal on outside click
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
