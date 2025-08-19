@@ -78,26 +78,31 @@ document.addEventListener("DOMContentLoaded", () => {
   animatedElements.forEach(el => observer.observe(el));
 });
 
-/* Filter Buttons */
-.cake-filter {
-  text-align: center;
-  margin: 30px 0;
-}
 
-.cake-filter button {
-  background: #fff;
-  border: 2px solid #ff5e5e;
-  color: #ff5e5e;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s;
-}
+// filter.js
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all filter buttons and cake cards
+  const filterButtons = document.querySelectorAll('.cake-filter button');
+  const cakeCards = document.querySelectorAll('.cake-card');
 
-.cake-filter button:hover,
-.cake-filter button.active {
-  background-color: #ff5e5e;
-  color: #fff;
-}
+  // Loop through each button
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove 'active' class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Add 'active' class to clicked button
+      button.classList.add('active');
+
+      const filter = button.getAttribute('data-filter');
+
+      // Show/hide cake cards based on filter
+      cakeCards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = card.classList.contains(filter) ? 'block' : 'none';
+        }
+      });
+    });
+  });
+});
