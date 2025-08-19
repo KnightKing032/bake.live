@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Details</title>
+  <style>
+    .cake-details { max-width: 800px; margin: auto; padding: 20px; }
+    .cake-details img { width: 100%; max-width: 400px; display: block; margin-bottom: 20px; }
+    .price { font-size: 22px; font-weight: bold; color: #e63946; }
+  </style>
+</head>
+<body>
+  <div class="cake-details">
+    <img id="cakeImage" src="" alt="Cake">
+    <h1 id="cakeTitle"></h1>
+    <p class="price" id="cakePrice"></p>
+    <p id="cakeDescription"></p>
+    <button>Buy Now</button>
+  </div>
+
+  <script>
+    // Load data from localStorage
+    document.getElementById("cakeTitle").textContent = localStorage.getItem("cakeTitle");
+    document.getElementById("cakePrice").textContent = "₹" + localStorage.getItem("cakePrice");
+    document.getElementById("cakeImage").src = localStorage.getItem("cakeImage");
+    document.getElementById("cakeDescription").textContent = localStorage.getItem("cakeDescription");
+  </script>
+</body>
+</html>
