@@ -1,96 +1,81 @@
-/* Reset some default styles */
+/* Base Styles (Mobile-first) */
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  background: #fafafa;
+  background: #fff7f9;
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
-/* Cake Details Container */
 .cake-details {
-  max-width: 900px;
-  width: 95%;
+  max-width: 600px; /* keeps it compact on desktop */
+  margin: 20px auto;
+  padding: 15px;
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
-/* Cake Image */
 .cake-details img {
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  max-height: 280px;
+  object-fit: cover;
   border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-/* Cake Title */
-.cake-details h1 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-/* Price */
-.cake-details .price {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #e63946;
   margin-bottom: 15px;
 }
 
-/* Description */
+.cake-details h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cake-details .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
 .cake-details p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 20px;
+  padding: 0 5px;
 }
 
-/* Buy Button */
 .cake-details button {
-  background: #ff7b00;
-  color: white;
-  border: none;
-  padding: 12px 25px;
+  padding: 12px 20px;
   font-size: 1rem;
-  font-weight: bold;
+  background: #e91e63;
+  border: none;
   border-radius: 8px;
+  color: #fff;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s;
 }
 
 .cake-details button:hover {
-  background: #e66900;
+  background: #c2185b;
 }
 
-/* Responsive Layout */
+/* Larger screens */
 @media (min-width: 768px) {
   .cake-details {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    text-align: left;
-    padding: 30px;
+    max-width: 800px;
+    padding: 25px;
   }
 
   .cake-details img {
-    flex: 1;
-    max-width: 350px;
-    margin-bottom: 0;
+    max-height: 400px;
   }
 
   .cake-details h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .cake-details .price {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .cake-details p {
@@ -98,7 +83,7 @@ body {
   }
 
   .cake-details button {
-    padding: 14px 30px;
     font-size: 1.1rem;
+    padding: 14px 24px;
   }
 }
