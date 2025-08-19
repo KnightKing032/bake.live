@@ -514,12 +514,14 @@
     <a id="modal-buy" href="#" target="_blank" class="btn">Buy</a>
   </div>
 </div>
+
 <script>
-  // Get modal
-  const modal = document.getElementById("cakeModal");
-  const modalImg = document.getElementById("modalImg");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalPrice = document.getElementById("modalPrice");
+  // Get modal elements
+  const modal = document.getElementById("cake-modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDesc = document.getElementById("modal-desc");
+  const modalPrice = document.getElementById("modal-price");
   const closeBtn = document.querySelector(".close");
 
   // When any cake-card is clicked
@@ -527,10 +529,12 @@
     card.addEventListener("click", () => {
       const img = card.querySelector("img").src;
       const title = card.querySelector("h3").innerText;
-      const price = card.querySelector("p").innerText;
+      const desc = card.querySelector("p").innerText; // use for description
+      const price = card.querySelector(".price")?.innerText || ""; // use .price class if available
 
       modalImg.src = img;
       modalTitle.innerText = title;
+      modalDesc.innerText = desc;
       modalPrice.innerText = price;
 
       modal.style.display = "flex";
@@ -549,6 +553,7 @@
     }
   });
 </script>
+
    <!-- JS Scripts -->
   <script src="filter.js"></script>
 </body>
