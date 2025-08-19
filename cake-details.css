@@ -68,6 +68,7 @@ body {
 
   .cake-details img {
     max-height: 400px;
+    width: 100%;
   }
 
   .cake-details h1 {
