@@ -67,3 +67,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+ // Select all animated elements
+const animatedElements = document.querySelectorAll('.fade-up, .zoom-in');
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // Add animation class
+      obs.unobserve(entry.target); // Animate once (remove this line if you want repeat on scroll)
+    }
+  });
+}, { threshold: 0.2 }); // 0.2 = triggers when 20% is visible
+
+// Apply observer
+animatedElements.forEach(el => observer.observe(el));
