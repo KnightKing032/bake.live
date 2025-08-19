@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Footer auto year
   const footerBottom = document.querySelector(".footer-bottom");
   const year = new Date().getFullYear();
-  footerBottom.innerHTML = `&copy; ${year} YourShop. All rights reserved.`;
+  footerBottom.innerHTML = `&copy; ${year} BakeLive. All rights reserved.`;
 
   // Social icon hover effects
   const socialIcons = document.querySelectorAll(".social-icons a");
