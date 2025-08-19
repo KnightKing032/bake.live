@@ -77,23 +77,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedElements.forEach(el => observer.observe(el));
 });
- const filterBtns = document.querySelectorAll(".filter-btn");
-const cakes = document.querySelectorAll(".cake-card");
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Remove active class from all buttons
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+/* Filter Buttons */
+.cake-filter {
+  text-align: center;
+  margin: 30px 0;
+}
 
-    const filter = btn.getAttribute("data-filter");
+.cake-filter button {
+  background: #fff;
+  border: 2px solid #ff5e5e;
+  color: #ff5e5e;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
 
-    cakes.forEach(cake => {
-      if (filter === "all" || cake.classList.contains(filter)) {
-        cake.style.display = "block";
-      } else {
-        cake.style.display = "none";
-      }
-    });
-  });
-});
+.cake-filter button:hover,
+.cake-filter button.active {
+  background-color: #ff5e5e;
+  color: #fff;
+}
